@@ -35,6 +35,6 @@ export default class SessionsController {
       updated_at: user.updated_at,
     };
 
-    return response.json({ userResponse, token });
+    return response.json({ user: userResponse, token });
   }
 }
