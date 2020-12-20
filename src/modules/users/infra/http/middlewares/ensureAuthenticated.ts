@@ -27,7 +27,7 @@ export default function ensureAuthenticated(
   try {
     const { secret } = authConfig.jwt;
 
-    const decoded = verify(token, secret);
+    const decoded = verify(token, String(secret));
 
     const { sub } = decoded as TokenPayload;
 
