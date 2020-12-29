@@ -43,7 +43,7 @@ class User {
       case 'disk':
         return `${process.env.APP_API_URL}/files/${this.avatar.replace(
           ' ',
-          '%20%',
+          '%20',
         )}`;
 
       case 's3':

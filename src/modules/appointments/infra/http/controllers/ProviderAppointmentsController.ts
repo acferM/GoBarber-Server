@@ -5,7 +5,7 @@ import { container } from 'tsyringe';
 class ProviderAppointmentsController {
   async index(request: Request, response: Response): Promise<Response> {
     const { id } = request.user;
-    const { day, year, month } = request.body;
+    const { day, year, month } = request.query;
 
     const listProviderAppointments = container.resolve(
       ListProviderAppointmentsService,
@@ -13,9 +13,9 @@ class ProviderAppointmentsController {
 
     const appointments = await listProviderAppointments.execute({
       provider_id: id,
-      day,
-      month,
-      year,
+      day: Number(day),
+      month: Number(month),
+      year: Number(year),
     });
 
     return response.json(appointments);
