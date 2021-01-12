@@ -1,5 +1,5 @@
 {
-  "name": "primeiro-projeto-node",
+  "name": "gobarber-api",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -11,7 +11,8 @@
     "typeorm:run-mi": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run",
     "typeorm:revert-mi": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert",
     "typeorm:show-mi": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:show",
-    "test": "jest"
+    "test": "jest",
+    "start": "node dist/shared/infra/http/server.js"
   },
   "dependencies": {
     "@types/ioredis": "^4.17.8",
