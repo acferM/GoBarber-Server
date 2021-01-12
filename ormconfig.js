@@ -14,11 +14,9 @@ module.exports = [
     }
   },
   {
+    "url": process.env.MONGODB_URL,
     "name": "mongo",
     "type": "mongodb",
-    "host": "localhost",
-    "port": 27017,
-    "database": "gostack_mongo",
     "useUnifiedTopology": true,
     "entities": [
       "./dist/modules/**/infra/typeorm/schemas/*.js"
