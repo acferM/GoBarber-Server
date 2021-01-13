@@ -19,7 +19,7 @@ module.exports = [
     "type": "mongodb",
     "useUnifiedTopology": true,
     "entities": [
-      "./dist/modules/**/infra/typeorm/schemas/*.js"
+      "./dist/modules/notifications/infra/typeorm/schemas/*.js"
     ]
   }
 ]
