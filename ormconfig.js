@@ -13,13 +13,13 @@ module.exports = [
       "migrationsDir": "./src/shared/infra/typeorm/migrations"
     }
   },
-  {
-    "url": process.env.MONGODB_URL,
-    "name": "mongo",
-    "type": "mongodb",
-    "useUnifiedTopology": true,
-    "entities": [
-      "./dist/modules/**/infra/typeorm/schemas/*.js"
-    ]
-  }
+  // {
+  //   "url": process.env.MONGODB_URL,
+  //   "name": "mongo",
+  //   "type": "mongodb",
+  //   "useUnifiedTopology": true,
+  //   "entities": [
+  //     "./dist/modules/notifications/infra/typeorm/schemas/**/*.js"
+  //   ]
+  // }
 ]

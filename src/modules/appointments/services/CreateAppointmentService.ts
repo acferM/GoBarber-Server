@@ -3,7 +3,7 @@ import { injectable, inject } from 'tsyringe';
 
 import AppError from '@shared/errors/AppError';
 
-import INotificationsRepository from '@modules/notifications/repositories/INotificationsRepository';
+// import INotificationsRepository from '@modules/notifications/repositories/INotificationsRepository';
 import ICacheProvider from '@shared/container/providers/CacheProvider/models/ICacheProvider';
 import Appointment from '../infra/typeorm/entities/Appointment';
 import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
@@ -20,8 +20,8 @@ class CreateAppointmentService {
     @inject('AppointmentsRepository')
     private appointmentsRepository: IAppointmentsRepository,
 
-    @inject('NotificationsRepository')
-    private notificationsRepository: INotificationsRepository,
+    // @inject('NotificationsRepository')
+    // private notificationsRepository: INotificationsRepository,
 
     @inject('CacheProvider')
     private cacheProvider: ICacheProvider,
@@ -63,12 +63,12 @@ class CreateAppointmentService {
       date: appointmentDate,
     });
 
-    const formattedDate = format(appointmentDate, "dd/MM/yyyy 'às' HH:mm");
+    // const formattedDate = format(appointmentDate, "dd/MM/yyyy 'às' HH:mm");
 
-    await this.notificationsRepository.create({
-      recipient_id: provider_id,
-      content: `Novo agendamento para ${formattedDate}h`,
-    });
+    // await this.notificationsRepository.create({
+    //   recipient_id: provider_id,
+    //   content: `Novo agendamento para ${formattedDate}h`,
+    // });
 
     await this.cacheProvider.invalidate(
       `provider-appointments:${provider_id}:${format(
