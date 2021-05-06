@@ -18,6 +18,7 @@ const app = express();
 
 app.use(cors({
   origin: 'https://gobarber',
+  optionsSuccessStatus: 200
 }));
 app.use(express.json());
 app.use('/files', express.static(uploadConfig.uploadsFolder));
