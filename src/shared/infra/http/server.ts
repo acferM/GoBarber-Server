@@ -17,7 +17,7 @@ import '@shared/container';
 const app = express();
 
 app.use(cors({
-  origin: 'https://gobarber',
+  origin: 'https://gobarberacfer.tk',
   optionsSuccessStatus: 200
 }));
 app.use(express.json());
